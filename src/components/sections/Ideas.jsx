@@ -1,0 +1,210 @@
+import React, { useRef, useEffect, useState } from 'react'
+import SlideUp from '../../animations/pageTransition/SlideUp';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import { ImCross } from "react-icons/im";
+import { FaPlay } from "react-icons/fa";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const Ideas = () => {
+  const wordRef = useRef(null);
+  const imageRef = useRef(null);
+  const containerRef = useRef([]);
+  const rightRef = useRef(null);
+
+
+  const clipImagesRef = useRef([]);
+  const headingsRef = useRef([]);
+  const activeIndex = useRef(0); 
+
+  const [isImage,setIsimage] = useState(true);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener('load', handleLoad);
+    const timeout = setTimeout(() => ScrollTrigger.refresh(), 500);
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+      clearTimeout(timeout);
+    };
+  }, []);
+
+  useGSAP(() => {
+    gsap.to(wordRef.current, {
+      x: 800,
+      ease: 'power3.inOut',
+      scrollTrigger: {
+        trigger: wordRef.current,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      }
+    });
+
+    gsap.set(imageRef.current, { clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)', scale: 1.2 })
+
+    gsap.to(imageRef.current, {
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+      scale: 1,
+      ease: 'power3.inOut',
+      duration: 0.1,
+      scrollTrigger: {
+        trigger: imageRef.current,
+        start: 'top bottom',
+        end: "bottom +=1000",
+        scrub: 5,
+        toggleActions: "play none none none",
+        once: true,
+      }
+    });
+
+    gsap.matchMedia().add("(max-width: 768px)", () => {
+      gsap.to(rightRef.current, {
+        x: 0,
+        ease: 'power3.inOut',
+        scrollTrigger: {
+          trigger: rightRef.current,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        }
+      })
+    });
+
+    gsap.fromTo(containerRef.current,
+      { yPercent: 100 },
+      {
+        yPercent: 0,
+        ease: "power3.out",
+        duration: 1,
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: containerRef.current[0],
+          start: "top 90%",
+          toggleActions: "play none none none",
+          once: true,
+        }
+      }
+    );
+
+
+    // Initialize all images as clipped
+    clipImagesRef.current.forEach((img, i) => {
+      gsap.set(img, { clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", scale: 1.2 });
+    });
+  
+
+    headingsRef.current.forEach((heading, i) => {
+      heading.addEventListener("mouseenter", () => {
+        clipImagesRef.current.forEach((img, j) => {
+          if (j === i) {
+            // Reveal hovered image
+            gsap.fromTo(img,{clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",}, {
+              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+              scale: 1,
+              duration: 0.8,
+              ease: "power3.inOut"
+            });
+          } else {
+            // Hide others smoothly
+            gsap.to(img, {
+              clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+              scale: 1.2,
+              duration: 0.8,
+              ease: "power3.inOut"
+            });
+          }
+        });
+      });
+    
+      heading.addEventListener("mouseleave", () => {
+        clipImagesRef.current.forEach((img, j) => {
+          gsap.to(img, {
+            clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+            scale: 1.2,
+            duration: 0.8,
+            ease: "power3.inOut"
+          });
+        });
+      });
+    });
+
+
+  }, [])
+
+  return (
+    <div className='py-32 bg-white rounded-t-4xl'>
+      <div className='flex w-full gap-0 px-4'>
+        <h4>(Ideas &nbsp;</h4>
+        <h4 ref={wordRef}>in Motion)</h4>
+      </div>
+      <div className='w-full relative overflow-hidden h-screen mt-6'>
+        <div ref={imageRef} className='w-full h-full'>
+        <div onClick={()=>setIsimage(prev=>!prev)} className='bg-[#121212] hidden cursor-pointer text-white lg:flex items-center justify-center rounded-full absolute top-1/2 left-1/2 z-30 p-2 w-30 aspect-square'>
+         <FaPlay className='text-4xl'/>
+        </div>
+        <img src="https://i.pinimg.com/736x/74/47/5b/74475b2d765dac5638ab716ccc85191d.jpg"  alt="" className={`w-full h-full relative z-10 ${isImage?'opacity-100':'opacity-0'}` } />
+        <video src="https://video-previews.elements.envatousercontent.com/h264-video-previews/5d80193f-2734-437e-93b2-6836b4a3f614/35150050.mp4" loop muted autoPlay className='size-120 hidden lg:block lg:size-169 object-cover  inset-0  absolute top-0 lg:left-1/3 '></video>
+       </div>
+      </div>
+      <h4 ref={rightRef} className='md:hidden translate-x-[100%]'>in Motion)</h4>
+      <div className='lg:ml-auto w-fit px-4 mt-6'>
+        {
+          [
+            "Ideas in Motion is where creativity meets execution — turning abstract concepts into living, breathing experiences.I bring",
+            "ideas to life through smooth interactions, thoughtful design, and purposeful animations that not only look good but feel right.",
+            "Every movement has intent, every detail has meaning, and together they transform static visions into dynamic realities."
+          ].map((line, i) => (
+            <div key={i} className='mask'>
+              <p ref={(el) => (containerRef.current[i] = el)} className='lg:whitespace-nowrap font-semibold text-xl md:text-2xl lg:text-xl'>
+                {line}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+
+      <div className="hidden lg:flex w-full h-screen justify-between px-16 items-center mt-32">
+        {/* LEFT IMAGES */}
+        <div className="relative w-[35vw] h-[37vw] overflow-hidden custom-border"
+        style={{backgroundImage:`url(https://luckybaliyan-portfolio.vercel.app/images/idea3.webp)`,backgroundPosition:'center',
+            backgroundSize:'cover',backgroundRepeat:'no-repeat'
+        }}>
+          {["https://luckybaliyan-portfolio.vercel.app/images/left-i.jpeg", "https://luckybaliyan-portfolio.vercel.app/images/p5.webp", "https://luckybaliyan-portfolio.vercel.app/images/idea3.webp"].map((src, i) => (
+            <img
+              key={i}
+              ref={(el) => (clipImagesRef.current[i] = el)}
+              src={src}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          ))}
+        </div>
+
+        {/* RIGHT HEADINGS */}
+        <div className="w-1/2 flex flex-col justify-center gap-12 px-12">
+          {["Digital Designer", "Web Developer", "Brand Designer"].map((title, i) => (
+            <div
+              key={i}
+              ref={(el) => (headingsRef.current[i] = el)}
+              className="cursor-pointer group cm"
+            >
+              <h4 className="text-7xl font-[satoshi] inline-block tracking-normal font-bold">{title}&nbsp;
+                <ImCross className='cn inline-block text-4xl scale-80 origin-center'/></h4>
+              <div className='bg-black w-0 h-[2px] cmm'></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Ideas;
