@@ -33,19 +33,19 @@ const greetings = [
 const socials = [
   {
     name:'Github',
-    link:"https://github.com/LuckyBaliyan"
+    link:"https://github.com/sushil12453-bit"
   },
   {
     name:'Linkdin',
-    link:'https://www.linkedin.com/in/lucky-baliyan-67b487299/'
+    link:'https://www.linkedin.com/in/sushil-kumar-690187379/'
   },
   {
     name:"Instagram",
-    link:'https://www.instagram.com/luckybaliyan3507/',
+    link:'https://www.linkedin.com/in/sushil-kumar-690187379/',
   },
   {
     name:'Youtube',
-    link:'https://www.youtube.com/@j__o__k__e__r'
+    link:'https://www.linkedin.com/in/sushil-kumar-690187379/'
   },
 ]
 
@@ -93,7 +93,7 @@ const expertise = [
     stack: [],
     link:null,
     status: "Not active",
-    github: "https://github.com/Sushilkumar-dev",
+    github: "https://github.com/sushil12453-bit",
     para:
       "An AI-powered image generator that creates high-quality visuals quickly and efficiently.",
     content:
@@ -108,7 +108,7 @@ const expertise = [
     stack: [],
     link: "https://luxora-frontend-rust.vercel.app/",
     status: "Live",
-    github: "https://github.com/Sushilkumar-dev",
+    github: "https://github.com/sushil12453-bit",
     para:
       "A luxury-focused MERN stack e-commerce platform designed for premium clothing brands.",
     content:
@@ -123,7 +123,7 @@ const expertise = [
     stack: [],
     link: "https://anime-reimagine.vercel.app/",
     status: "Live",
-    github: "https://github.com/Sushilkumar-dev",
+    github: "https://github.com/sushil12453-bit",
     para:
       "An anime-inspired animated website with immersive GSAP-driven transitions.",
     content:
@@ -138,7 +138,7 @@ const expertise = [
     stack: [],
     link: "https://api-projects-two.vercel.app/",
     status: "Live",
-    github: "https://github.com/Sushilkumar-dev",
+    github: "https://github.com/sushil12453-bit",
     para:
       "A dynamic news portal with real-time search and smooth user interactions.",
     content:
@@ -153,7 +153,7 @@ const expertise = [
     stack: [],
     link: "https://nexa-bridge-dun.vercel.app/",
     status: "under development",
-    github: "https://github.com/Sushilkumar-dev",
+    github: "https://github.com/sushil12453-bit",
     para:
       "An alumni-student connectivity platform with mentorship, jobs, and community features.",
     content:
@@ -327,9 +327,9 @@ const allProjects = [
       { img: "/images/luxora_4.png",},
     ],
     stack: ['html','tailwind css','react','node','express','lenis','mongo db','jwt','git','stripe','cloudinary','react-toastify','vercel'],
-    link: "https://luxora-frontend-rust.vercel.app/",
+    link: "https://luxura-great-e-commerce-2jrf.vercel.app/",
     status: "Live",
-    github: "https://github.com/LuckyBaliyan/Brainwave_Matrix_Intern.git",
+    github: "https://github.com/sushil12453-bit/Luxura_Great-e-commerce.git",
     para:
       "A luxury-focused MERN stack e-commerce platform designed for premium clothing brands.",
     content:
@@ -350,9 +350,9 @@ const allProjects = [
       {img:"/images/reimagine_7.png"},
     ],
     stack: ['Html','tailwind css','react','gsap','Scroll Trigger','lenis','git','vercel'],
-    link: "https://anime-reimagine.vercel.app/",
+    link: "https://reimagine-eight.vercel.app/",
     status: "Live",
-    github: "https://github.com/LuckyBaliyan/AnimeReimagine.git",
+    github: "https://github.com/sushil12453-bit/reimagine.git",
     para:
       "An anime-inspired animated website with immersive GSAP-driven transitions.",
     content:
@@ -366,9 +366,9 @@ const allProjects = [
     video: "/videos/times.mp4",
     imges: [{img:"/images/times_1.jpg"},{img:"/images/times_2.jpg"},{img:"/images/times_3.jpg"},{img:"/images/times_1.jpg"},{img:"/images/times_2.jpg"},{img:"/images/times_3.jpg"},],
     stack: ['html','css','javaScript','Rest Api','gsap','scroll trigger','lenis','git','vercel'],
-    link: "https://api-projects-two.vercel.app/",
+    link: "https://news-generate.vercel.app/",
     status: "Live",
-    github: "https://github.com/LuckyBaliyan/API_Projects.git",
+    github: "https://github.com/sushil12453-bit/News-generate.git",
     para:
       "A dynamic news portal with real-time search and smooth user interactions.",
     content:
@@ -408,9 +408,9 @@ const allProjects = [
   }
   ],
   stack: ["React", "Framer Motion", "Locomotive Scroll", "TailwindCSS", "Git", "Vercel", "HTML"],
-  link: 'https://ochi-design-agency-one.vercel.app/',
+  link: 'https://ochi-design-second.vercel.app/',
   status: "Active",
-  github: "https://github.com/LuckyBaliyan/ochiDesignAgency.git",
+  github: "https://github.com/sushil12453-bit/ochi_design_second.git",
   para:
     "A modern design agency landing page built with smooth animations and prallax",
   content:
@@ -440,7 +440,7 @@ const allProjects = [
   video: "/videos/neue.mp4",
   imges: [{img:'/images/neue.webp'},{img:'/images/neue1.png'},{img:'/images/neue2.png'},{img:'/images/neue3.png'},{img:'/images/neue4.png'}],
   stack: ["HTML", "CSS", "JavaScript", "GSAP", "Git", "Vercel"],
-  link:'https://brainwave-matrix-intern-tbyg.vercel.app/',
+  link:'https://new-reality-ebon.vercel.app/',
   status: "Active",
   github: "https://github.com/LuckyBaliyan/-Brainwave_Matrix_Intern.git",
   para:
