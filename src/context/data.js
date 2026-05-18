@@ -61,11 +61,6 @@ const expertise = [
       "I craft intuitive and user-centric interfaces backed by research, delivering designs that feel effortless to use and keep users engaged.",
   },
   {
-    title: "Brand Identity Design",
-    content:
-      "I create bold and cohesive brand identities that communicate your values clearly, leaving a lasting impression across digital and print mediums.",
-  },
-  {
     title: "Motion Animation",
     content:
       "I design sleek, purposeful animations that bring products and interfaces to life, guiding user attention and making interactions memorable.",
@@ -75,11 +70,7 @@ const expertise = [
     content:
       "I specialize in conversion-focused landing pages with compelling visuals and persuasive layouts that maximize lead generation and sales.",
   },
-  {
-    title: "Mobile App Design",
-    content:
-      "I design modern, scalable mobile app interfaces that prioritize usability, accessibility, and delight, ensuring users return again and again.",
-  },
+  
 ];
 
 

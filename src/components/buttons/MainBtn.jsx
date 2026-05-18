@@ -2,26 +2,37 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { FaLocationArrow } from "react-icons/fa";
 
-const MainBtn = ({text,link='',custome='',forResume = false}) => {
+const MainBtn = ({ text, link = '', custome = '', forResume = false }) => {
 
   const downloadResume = () => {
-    if(forResume){
-      const link = document.createElement('a');
-      link.href = '/doc/Sushil kumar ki pdf yhi hogi resume ki'; 
-      link.download = 'sushil kumar .pdf';
-      link.click();
-    }
-    else{
-      return
+    if (forResume) {
+      const a = document.createElement('a');
+      a.href = '/doc/Sushil-Kumar-FullStack-Developer-Resume.pdf';
+      a.download = 'Sushil-Kumar-FullStack-Developer-Resume.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
   };
 
+  if (forResume) {
+    return (
+      <button
+        onClick={downloadResume}
+        className={`main-btn flex gap-3 items-center justify-center ${custome}`}
+      >
+        {text}
+        <FaLocationArrow className='text-md rotate-6' />
+      </button>
+    )
+  }
+
   return (
     <Link to={link}>
-        <button onClick={downloadResume} className={`main-btn flex gap-3 items-center justify-center ${custome}`}>
-            {text}
-            <FaLocationArrow className='tex-md rotate-6'/>
-        </button>
+      <button className={`main-btn flex gap-3 items-center justify-center ${custome}`}>
+        {text}
+        <FaLocationArrow className='text-md rotate-6' />
+      </button>
     </Link>
   )
 }
