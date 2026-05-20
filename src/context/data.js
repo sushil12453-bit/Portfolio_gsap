@@ -168,16 +168,16 @@ const stacks = [
   {
     id:2,
     name:'Js',
-    img:'images/js.svg',
+    img:'/images/js.svg',
     col:''
   },
   {
     id:3,
     name:'tailwindcss',
-    img:'images/tailwind.svg',
+    img:'/images/tailwind.svg',
     col:''
   },
-  { id: 4, name: "Express", img: "images/express-js.png",
+  { id: 4, name: "Express", img: "/images/express-js.png",
     col:''
    },
   {
@@ -192,25 +192,25 @@ const stacks = [
     img:'/images/css.svg',
     col:''
   },
-  { id: 7, name: "Mongoose", img: "images/MongoDB.svg",
+  { id: 7, name: "Mongoose", img: "/images/MongoDB.svg",
     col:''
    },
-  { id: 8, name: "Java", img: "images/java.svg",
+  { id: 8, name: "Java", img: "/images/java.svg",
     col:''
    },
-  { id: 9, name: "Python", img: "images/Python.svg" ,
+  { id: 9, name: "Python", img: "/images/Python.svg" ,
     col:''
   },
   {
     id:6,
     name:'React',
-    img:'images/react.png',
+    img:'/images/react.png',
     col:'#78CB65'
   },
-  { id: 11, name: "GSAP", img: "images/gsap.svg",
+  { id: 11, name: "GSAP", img: "/images/gsap.svg",
     col:''
    },
-  { id: 12, name: "Git", img: "images/git.svg",
+  { id: 12, name: "Git", img: "/images/git.svg",
     col:''
    },
    {
@@ -228,16 +228,16 @@ const stacks = [
   {
     id:15,
     name:'Js',
-    img:'images/js.svg',
+    img:'/images/js.svg',
     col:''
   },
   {
     id:16,
     name:'tailwindcss',
-    img:'images/tailwind.svg',
+    img:'/images/tailwind.svg',
     col:''
   },
-  { id: 17, name: "Express", img: "images/express-js.png",
+  { id: 17, name: "Express", img: "/images/express-js.png",
     col:''
    },
   {
@@ -249,28 +249,28 @@ const stacks = [
     {
     id:19,
     name:'React',
-    img:'images/react.png',
+    img:'/images/react.png',
     col:'#78CB65'
   },
-  { id: 20, name: "Mongoose", img: "images/MongoDB.svg",
+  { id: 20, name: "Mongoose", img: "/images/MongoDB.svg",
     col:''
    },
-  { id: 21, name: "Java", img: "images/java.svg",
+  { id: 21, name: "Java", img: "/images/java.svg",
     col:''
    },
-  { id: 22, name: "Python", img: "images/Python.svg" ,
+  { id: 22, name: "Python", img: "/images/Python.svg" ,
     col:''
   },
-  { id: 23, name: "C", img: "images/C2.svg",
+  { id: 23, name: "C", img: "/images/C2.svg",
     col:''
    },
-  { id: 24, name: "GSAP", img: "images/gsap.svg",
+  { id: 24, name: "GSAP", img: "/images/gsap.svg",
     col:''
    },
-  { id: 25, name: "Git", img: "images/git.svg",
+  { id: 25, name: "Git", img: "/images/git.svg",
     col:''
    },
-  { id: 26, name: "Java", img: "images/java.svg",
+  { id: 26, name: "Java", img: "/images/java.svg",
   }
 
 ];
