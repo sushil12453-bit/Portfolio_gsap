@@ -105,13 +105,13 @@ const Home = () => {
         <div className="my-img mt-2 md:mt-0 scale-100 md:scale-70">
            <CardTilt  className='w-[20vh] h-[23vh] lg:w-[25vw] lg:h-[32vw] md:w-[30vw] md:h-[36vw]'>
             <div ref={imgRef} className="img-wrapper relative scale-100 img-clip overflow-hidden rounded-[6px] w-full h-full">
-            <img src="images/copy.jpg" alt="" className='last scale-110 object-top grayscale-0'/>
+            <img src="images/Portfolio.jpeg" alt="" className='last scale-110 object-top grayscale-0'/>
             </div>
             </CardTilt>
             <div className="w-full mask py-2">
               <p ref={nameRef} className='anim-placeholder  uppercase tracking-tighter 
               font-extrabold whitespace-nowrap text-xl md:text-2xl lg:text-5xl pr-5'>
-              &#9679; <SplitText text='Lucky Baliyan'/>
+              &#9679; <SplitText text='Sushil Kumar'/>
               </p>
             </div>
         </div>
